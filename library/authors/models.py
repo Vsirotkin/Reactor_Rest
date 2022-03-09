@@ -11,7 +11,7 @@ class Author(models.Model):
     birthday_year   = models.PositiveIntegerField()
 
     def __str__(self):
-        return f'{self.name} : {self.last_name}'
+        return f'{self.first_name} : {self.last_name}'
 
 
 class Biography(models.Model):

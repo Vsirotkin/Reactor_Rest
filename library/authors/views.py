@@ -14,11 +14,11 @@ class BookModelViewSet(ModelViewSet):
     serializer_class = BookSerializer
 
 
-class ModelViewSet(ModelViewSet):
+class BiographyModelViewSet(ModelViewSet):
     queryset = Biography.objects.all()
     serializer_class = BiographySerializer
 
 
-class BookModelViewSet(ModelViewSet):
+class ArticleModelViewSet(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
