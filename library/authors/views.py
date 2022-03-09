@@ -1,24 +1,24 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import Author, Book, Biography, Artical
-from .serializers import AuthorModelSerializer, BookModelSerializer, BiographyModelSerializer, ArticalModelSerializer
+from .models import Author, Book, Biography, Article
+from .serializers import AuthorSerializer, BookSerializer, BiographySerializer, ArticleSerializer
 
 
 class AuthorModelViewSet(ModelViewSet):
     #renderer_classes = ['StaticHTMLRenderer']
     queryset = Author.objects.all()
-    serializer_class = AuthorModelSerializer
+    serializer_class = AuthorSerializer
 
 
 class BookModelViewSet(ModelViewSet):
     queryset = Book.objects.all()
-    serializer_class = BookModelSerializer
+    serializer_class = BookSerializer
 
 
 class ModelViewSet(ModelViewSet):
     queryset = Biography.objects.all()
-    serializer_class = BiographyModelSerializer
+    serializer_class = BiographySerializer
 
 
 class BookModelViewSet(ModelViewSet):
-    queryset = Artical.objects.all()
-    serializer_class = ArticalModelSerializer
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer

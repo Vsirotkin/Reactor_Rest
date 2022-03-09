@@ -1,10 +1,36 @@
 from django.db import models
 
-from uuid import uuid4
-from django.core.validators import validate_email
+#from uuid import uuid4
+#from django.core.validators import validate_email
 
 # Create your models here.
 
+class Author(models.Model):
+    name = models.CharField(max_length=32)
+    birthday_year = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.name
+
+
+class Biography(models.Model):
+    text = models.TextField()
+    author = models.OneToOneField(Author, on_delete=models.CASCADE)
+
+
+class Book(models.Model):
+    name = models.CharField(max_length=32)
+    authors = models.ManyToManyField(Author)
+
+
+class Article(models.Model):
+    name = models.CharField(max_length=32)
+    author = models.ForeignKey(Author, models.PROTECT)
+
+
+
+
+'''
 class Author(models.Model):
     # uid             = models.UUIDField(primary_key=True, default=uuid4())
     first_name      = models.CharField(max_length=64)
@@ -16,7 +42,7 @@ class Author(models.Model):
 
 
 class Biography(models.Model):
-    text = models.text_field()
+    text = models.TextField()
     author = models.OneToOneField(Author, on_delete=models.CASCADE)
 
 
@@ -28,3 +54,4 @@ class Book(models.Model):
 class Artical(models.Model):
     name = models.CharField(max_length=32)
     author = models.ForeignKey(Author, models.PROTECT)
+'''
