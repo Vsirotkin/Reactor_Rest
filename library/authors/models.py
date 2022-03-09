@@ -6,11 +6,12 @@ from django.db import models
 # Create your models here.
 
 class Author(models.Model):
-    name = models.CharField(max_length=32)
-    birthday_year = models.PositiveIntegerField()
+    first_name      = models.CharField(max_length=64)
+    last_name       = models.CharField(max_length=64)
+    birthday_year   = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.name
+        return f'{self.name} : {self.last_name}'
 
 
 class Biography(models.Model):
