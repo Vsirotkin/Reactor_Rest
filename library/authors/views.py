@@ -2,6 +2,11 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Author, Book, Biography, Article
 from .serializers import AuthorSerializer, BookSerializer, BiographySerializer, ArticleSerializer
 
+from rest_framework.renderers import AdminRenderer
+
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework.settings import api_settings
+
 
 class AuthorModelViewSet(ModelViewSet):
     #renderer_classes = ['StaticHTMLRenderer']
@@ -15,6 +20,7 @@ class BookModelViewSet(ModelViewSet):
 
 
 class BiographyModelViewSet(ModelViewSet):
+    # renderer_classes = [AdminRenderer] changeble view
     queryset = Biography.objects.all()
     serializer_class = BiographySerializer
 

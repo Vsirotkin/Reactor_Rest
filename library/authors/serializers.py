@@ -22,7 +22,7 @@ class BiographySerializer(serializers.ModelSerializer):
         fields = ['text', 'author']
 
 class ArticleSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
+    author = SimpleAuthorModelSerializer()
 
     class Meta:
         model = Article
