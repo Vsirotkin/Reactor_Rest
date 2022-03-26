@@ -1,4 +1,3 @@
-#from rest_framework.serializers import HyperlinkedModelSerializer
 from rest_framework import serializers
 # from rest_framework.serializers import StringRelatedField
 from rest_framework.renderers import JSONRenderer
